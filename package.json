@@ -4,7 +4,7 @@
   "description": "Basic template for node projects.",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
+    "dev": "set DEBUG=backend* && nodemon src/index.js",
     "udp": "ncu"
   },
   "author": "jscalderon65",
@@ -12,8 +12,11 @@
   "homepage": "https://github.com/jscalderon65/node-basic-template",
   "dependencies": {
     "cors": "^2.8.5",
+    "debug": "^4.3.4",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-debug-async-wrap": "^2.0.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
     "npm-check-updates": "^11.8.5"
   }
