@@ -1,6 +1,6 @@
 const debug = require('debug')('backend:server:error')
 
-const notRouteNotFoundMiddleware = (req, res, next) => {
+const routeNotFoundMiddleware = (req, res, next) => {
   const err = new Error('Not Found')
   err.statusCode = 404
   next(err)
@@ -21,4 +21,4 @@ const catchErrorMiddleware = (err, req, res, next) => {
   res.status(errStatus).json(response)
 }
 
-module.exports = {notRouteNotFoundMiddleware, catchErrorMiddleware}
+module.exports = {routeNotFoundMiddleware, catchErrorMiddleware}

@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000
 const {morganMiddleware} = require('./Middlewares/morgan')
 
 const {
-  notRouteNotFoundMiddleware,
+  routeNotFoundMiddleware,
   catchErrorMiddleware,
 } = require('./Middlewares/errorHandling')
 
@@ -19,6 +19,6 @@ app.use(morganMiddleware)
 
 app.use('/', require('./Routes/example.js'))
 
-app.use(notRouteNotFoundMiddleware, catchErrorMiddleware)
+app.use(routeNotFoundMiddleware, catchErrorMiddleware)
 
 module.exports = app
